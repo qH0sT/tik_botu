@@ -1,0 +1,15 @@
+c:\users\harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\bin\Debug\tik_botu.exe.config
+c:\users\harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\bin\Debug\tik_botu.exe
+c:\users\harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\bin\Debug\tik_botu.pdb
+c:\users\harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\obj\Debug\tik_botu.Properties.Resources.resources
+c:\users\harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\obj\Debug\tik_botu.csproj.GenerateResource.Cache
+c:\users\harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\obj\Debug\tik_botu.exe
+c:\users\harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\obj\Debug\tik_botu.pdb
+c:\users\harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\obj\Debug\tik_botu.Form1.resources
+C:\Users\Harun\Documents\Visual Studio 2015\Projects\tik_botu\tik_botu\bin\Debug\Geckofx-Core.dll
+C:\Users\Harun\Documents\Visual Studio 2015\Projects\tik_botu\tik_botu\bin\Debug\Geckofx-Winforms.dll
+C:\Users\Harun\Documents\Visual Studio 2015\Projects\tik_botu\tik_botu\bin\Debug\Geckofx-Core.pdb
+C:\Users\Harun\Documents\Visual Studio 2015\Projects\tik_botu\tik_botu\bin\Debug\Geckofx-Winforms.pdb
+C:\Users\Harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\obj\Debug\tik_botu.Tarayici.resources
+C:\Users\Harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\obj\Debug\tik_botu.Intro.resources
+C:\Users\Harun\documents\visual studio 2015\Projects\tik_botu\tik_botu\obj\Debug\tik_botu.csprojResolveAssemblyReference.cache
