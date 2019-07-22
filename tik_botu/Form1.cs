@@ -12,12 +12,11 @@ namespace tik_botu
         public Form1()
         {
             InitializeComponent();
-            prxy_tr = "4";
           
         }
         Tarayici t = null;
         bool pop = true;
-        string prxy_tr = "";
+        string prxy_tr = "4";
         List<Tarayici> tarayici_listesi = new List<Tarayici>();
         private void button1_Click(object sender, EventArgs e)
         {
