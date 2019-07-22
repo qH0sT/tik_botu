@@ -34,7 +34,7 @@ namespace tik_botu
                         t.Opacity = 100;
                         t.Show();
                     }
-                    else { t.Opacity = 0; t.ShowInTaskbar = false; }
+                    else { t.Opacity = 0; t.ShowInTaskbar = false; t.Show(); }
                     
                 }
                 button1.Enabled = false;
