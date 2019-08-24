@@ -1,46 +1,79 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.IO;
 using System.Windows.Forms;
+using System.Net;
 
 namespace tik_botu
 {
     public partial class Form1 : Form
     {
+        string Surum = "V3.0.0";
         public Form1()
         {
             InitializeComponent();
-          
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            Guncelleme_Kontrol();           
+            prxy_tr = "4";
+        }
+        public async void Guncelleme_Kontrol()
+        {
+            try
+            {
+                using (WebClient wclient = new WebClient())
+                {
+                    string s = await wclient.DownloadStringTaskAsync("https://kajmeran41.blogspot.com/p/botguncelleme.html");
+                    if (s.Substring(s.IndexOf("V"), s.IndexOf("'")).Replace("' property='og:descrip", "") != Surum)
+                    {
+
+                        textBox5.Text = "Yeni Sürüm Mevcut" + Environment.NewLine + s.Substring(s.IndexOf("V"), s.IndexOf("'")).Replace("' property='og:descrip", "");
+
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                textBox5.Text = "Güncelleme kontrol edilemedi.";
+            }
         }
         Tarayici t = null;
         bool pop = true;
-        string prxy_tr = "4";
+        string prxy_tr = "";
         List<Tarayici> tarayici_listesi = new List<Tarayici>();
         private void button1_Click(object sender, EventArgs e)
         {
-            if (listBox1.Items.Count > 0 && listBox2.Items.Count > 0)
-            {
-                foreach (var c in listBox1.Items)
+         
+                if (listBox1.Items.Count > 0 && listBox2.Items.Count > 0)
                 {
-                    t = new Tarayici(c.ToString(), listBox2.Items.Cast<string>().ToList(), 
-                    prxy_tr, pop, listBox4.Items.Cast<string>().ToList(), listBox5.Items.Cast<string>().ToList());
-                    tarayici_listesi.Add(t);
-
-                    if (!checkBox2.Checked)
+                    for (int i = 0; i < Convert.ToInt32(numericUpDown1.Value); i++)
                     {
-                        t.Opacity = 100;
-                        t.Show();
+
+                        t = new Tarayici(listBox1.Items.Cast<string>().ToList(), listBox2.Items.Cast<string>().ToList(),
+                        prxy_tr, pop, listBox4.Items.Cast<string>().ToList(), listBox5.Items.Cast<string>().ToList(),
+                        Convert.ToInt32(numericUpDown2.Value), i.ToString());
+
+                        tarayici_listesi.Add(t);
+
+                        if (!checkBox2.Checked)
+                        {
+                            t.Opacity = 100;
+                            t.Show();
+                        }
+                        else { t.Opacity = 0; t.ShowInTaskbar = false; }
+
+                        System.Threading.Thread.Sleep(300);
                     }
-                    else { t.Opacity = 0; t.ShowInTaskbar = false; t.Show(); }
-                    
+
+                    button1.Enabled = false;
+                    button2.Enabled = true;
+                    başlatToolStripMenuItem.Enabled = false;
+                    durdurToolStripMenuItem.Enabled = true;
                 }
-                button1.Enabled = false;
-                button2.Enabled = true;
-                başlatToolStripMenuItem.Enabled = false;
-                durdurToolStripMenuItem.Enabled = true;
-            }
+            
         }
        
         private void button2_Click(object sender, EventArgs e)
@@ -226,6 +259,12 @@ namespace tik_botu
             
             listBox2.Items.Add(textBox4.Text);
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+      
     }
 
 }
