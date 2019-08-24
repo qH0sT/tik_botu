@@ -1,5 +1,4 @@
-﻿using Gecko;
-using Gecko.DOM;
+using Gecko;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -10,32 +9,51 @@ namespace tik_botu
         List<string> prxy_lstesi = new List<string>();
         List<string> referer_listesi = new List<string>();
         List<string> user_Agent_listesi = new List<string>();
-        string url = ""; 
+        List<string> URL_Listesi = new List<string>();
+        List<string> kullanilanlar = new List<string>();
+
+        string Rastgele_url = "";
+        string Rastgele_prxy = "";
+        string Rastgele_user_agents = "";
+        string Rastgele_referer = "";
+
         string[] ayrac = new string[] { "X" };
-        string tur = ""; 
-        int liste_say = 0;
-        int basla = 0;
-        int tik_sayisi = 0;
+        string tur = "";
+        string id = "";
+        int geri_sayim = 0;
+        int geri_sayim2 = 0;
         bool ppup = false;
-        public Tarayici(string url, IEnumerable<string> proxy_listesi, string prxy_turu, bool 
-        popup_show, IEnumerable<string> referer, IEnumerable<string> user_agents)
+
+        public Tarayici(List<string> url, List<string> proxy_listesi, string prxy_turu, bool 
+        popup_show, List<string> referer, List<string> user_agents, int time_out, string ID)
         {
             InitializeComponent();
             Xpcom.Initialize("Firefox");
-            this.url = url;
+            URL_Listesi.AddRange(url);
             prxy_lstesi.AddRange(proxy_listesi);
             referer_listesi.AddRange(referer);
             user_Agent_listesi.AddRange(user_agents);
-            liste_say = prxy_lstesi.Count;
-            tur = prxy_turu;
-            timer1.Enabled = true;
+            tur = prxy_turu;          
             ppup = popup_show;
+            geri_sayim = time_out;
+            geri_sayim2 = geri_sayim;
+            id = ID;
+
             GeckoPreferences.User["browser.xul.error_pages.enabled"] = true;
             GeckoPreferences.Default["network.proxy.type"] = 1;
+
+            Rastgele_url = URL_Listesi[new Random().Next(0, URL_Listesi.Count - 1)]; kullanilanlar.Add(Rastgele_url);
+            Rastgele_prxy = prxy_lstesi[new Random().Next(0, prxy_lstesi.Count - 1)]; kullanilanlar.Add(Rastgele_prxy);
+            Rastgele_referer = referer_listesi[new Random().Next(0, referer_listesi.Count - 1)]; kullanilanlar.Add(Rastgele_referer);
+            Rastgele_user_agents = user_Agent_listesi[new Random().Next(0, user_Agent_listesi.Count - 1)]; kullanilanlar.Add(Rastgele_user_agents);
+
+            Ana_Islem();
         }
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (url.Contains("bc.vc")) {
+       
+
+           if (Rastgele_url.Contains("bc.vc")) {
 
                 foreach (GeckoHtmlElement geckoHtmlElement2 in geckoWebBrowser1.Document.GetElementsByTagName("div"))
                 {
@@ -44,138 +62,133 @@ namespace tik_botu
                     {
 
                         geckoHtmlElement2.Click();
-                        ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add("Tıklama yapıldı. " + url);
-                        tik_sayisi += 1;
-                        timer2.Enabled = false;
+                     
                     }
 
                 }
             }
             
-           if (url.Contains("link.tl"))
+           if (Rastgele_url.Contains("http://link.tl"))
             {
-                foreach (GeckoHtmlElement geckoHtmlElement2 in geckoWebBrowser1.Document.GetElementsByTagName("div"))
-                {
-
-                    if (geckoHtmlElement2.GetAttribute("class") == "btn")
+                foreach(GeckoHtmlElement elmnt in geckoWebBrowser1.Document.GetElementsByTagName("button"))
+              
+                if (elmnt.GetAttribute("id") == "get_link_btn")
                     {
-                      
-                        geckoHtmlElement2.Click();
-                        ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add("Tıklama yapıldı. " + url);
-                        tik_sayisi += 1;
-                        timer2.Enabled = false;
+
+                        elmnt.Click();
+  
                     }
                    
                 }
-            }
+            
            
         }
-        private void geckoWebBrowser1_DocumentCompleted(object sender, Gecko.Events.GeckoDocumentCompletedEventArgs e)
+        public void Ana_Islem()
         {
-            Text = "URL: " + geckoWebBrowser1.Url.ToString();
-            ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add("Yönlendirme Tamamlandı. " + geckoWebBrowser1.Url.ToString());
-            if (geckoWebBrowser1.Document.Head.InnerHtml.Contains("Wrap Long Lines"))
+            if (prxy_lstesi.Count != 0)
             {
-                
-                ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add("HTTP Bad Request. Tıklama yapılamadı. " + geckoWebBrowser1.Url.ToString() + " PRXY: " + prxy_lstesi[basla - 1]);
-                timer1.Enabled = true;
-            }
+                geri_sayim2 = geri_sayim;
+                timer2.Stop();
+                timer2.Enabled = false;
+                timer3.Stop();
+                timer3.Enabled = false;
 
-            if (geckoWebBrowser1.Url.ToString().Replace("https","http") != url.Replace("https","http"))
-            {
-                timer1.Enabled = true;
-
-            }
-           
-            if (geckoWebBrowser1.Document.Head.InnerHtml.Contains("| Cloudflare"))
-            {
-                
-                ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add("Cloudflare Koruma Sistemi ile karşılaşıldı. URL: " + geckoWebBrowser1.Url.ToString() + " PROXY: " + prxy_lstesi[basla - 1]);
-                timer1.Enabled = true;
-            }
-
-        }
-        string baglanti_turu = "";
-        bool t = true; //bi test için kullanmıştım, isterseniz kaldırabilirsiniz.
-       
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (basla < prxy_lstesi.Count)
-            {
                 Xpcom.QueryInterface<nsICookieManager>(Xpcom.GetService<nsICookieManager>("@mozilla.org/cookiemanager;1")).RemoveAll();
                 CookieManager.RemoveAll();
-                ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add(url+" için timer1 çalışıyor.");
-                ayrac = prxy_lstesi[basla].Split(':');
-                GeckoPreferences.User["general.useragent.override"] = user_Agent_listesi[new Random().Next(0, user_Agent_listesi.Count - 1)];
+                ayrac = Rastgele_prxy.Split(':');
 
-                if (t == true) // test için eklemiştim, isterseniz kaldırabilirsiniz bu kontrolü.
-                {
-                    switch (tur)
-                    {
-                        case "4":
-                            GeckoPreferences.Default["network.proxy.socks"] = ayrac[0];
-                            GeckoPreferences.Default["network.proxy.socks_port"] = Convert.ToInt32(ayrac[1]);
-                            GeckoPreferences.User["network.proxy.socks_version"] = 4;
-                            baglanti_turu = "SOCKS4";
-                            break;
-
-                        case "5":
-                            GeckoPreferences.Default["network.proxy.socks"] = ayrac[0];
-                            GeckoPreferences.Default["network.proxy.socks_port"] = Convert.ToInt32(ayrac[1]);
-                            GeckoPreferences.User["network.proxy.socks_version"] = 5;
-                            baglanti_turu = "SOCKS5";
-                            break;
-
-                        case "h":
-                            GeckoPreferences.Default["network.proxy.type"] = 1;
-                            GeckoPreferences.Default["network.proxy.http"] = ayrac[0];
-                            GeckoPreferences.Default["network.proxy.http_port"] = Convert.ToInt32(ayrac[1]);
-                            baglanti_turu = "HTTP";
-                            break;
-
-                        case "s":
-                            GeckoPreferences.Default["network.proxy.http"] = ayrac[0];
-                            GeckoPreferences.Default["network.proxy.http_port"] = Convert.ToInt32(ayrac[1]);
-                            GeckoPreferences.Default["network.proxy.ssl"] = ayrac[0];
-                            GeckoPreferences.Default["network.proxy.ssl_port"] = Convert.ToInt32(ayrac[1]);
-                            baglanti_turu = "HTTPS";
-                            break;
-                    }
-                }
-               
-                geckoWebBrowser1.Navigate(url, GeckoLoadFlags.BypassHistory, referer_listesi[new Random().Next(0,referer_listesi.Count -1)], null, null);
+                GeckoPreferences.User["general.useragent.override"] = Rastgele_user_agents;
                 
-                Text = "Tarayıcı yönlendirildi: " + prxy_lstesi[basla];
-                ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add(url + " için tarayıcı "+ prxy_lstesi[basla] + " adresinden yönlendirildi. Bağlantı Türü: " + baglanti_turu);
-                basla += 1;
+                switch (tur)
+                {
+                    case "4":
+                        GeckoPreferences.Default["network.proxy.socks"] = ayrac[0];
+                        GeckoPreferences.Default["network.proxy.socks_port"] = Convert.ToInt32(ayrac[1]);
+                        GeckoPreferences.User["network.proxy.socks_version"] = 4;
+                        break;
+
+                    case "5":
+                        GeckoPreferences.Default["network.proxy.socks"] = ayrac[0];
+                        GeckoPreferences.Default["network.proxy.socks_port"] = Convert.ToInt32(ayrac[1]);
+                        GeckoPreferences.User["network.proxy.socks_version"] = 5;
+                        break;
+
+                    case "h":
+                        GeckoPreferences.Default["network.proxy.type"] = 1;
+                        GeckoPreferences.Default["network.proxy.http"] = ayrac[0];
+                        GeckoPreferences.Default["network.proxy.http_port"] = Convert.ToInt32(ayrac[1]);
+                        break;
+
+                    case "s":
+                        GeckoPreferences.Default["network.proxy.http"] = ayrac[0];
+                        GeckoPreferences.Default["network.proxy.http_port"] = Convert.ToInt32(ayrac[1]);
+                        GeckoPreferences.Default["network.proxy.ssl"] = ayrac[0];
+                        GeckoPreferences.Default["network.proxy.ssl_port"] = Convert.ToInt32(ayrac[1]);
+                        break;
+                }
+                               
+                geckoWebBrowser1.Navigate(Rastgele_url, GeckoLoadFlags.BypassHistory, Rastgele_referer, null, null);
+                ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add(Rastgele_url + " Adresine yönlendirildi. "+ Rastgele_prxy);
+                Rastgele_url = URL_Listesi[new Random().Next(0, URL_Listesi.Count - 1)];
+                Rastgele_prxy = prxy_lstesi[new Random().Next(0, prxy_lstesi.Count - 1)];
+                prxy_lstesi.Remove(Rastgele_prxy);
+                Rastgele_referer = referer_listesi[new Random().Next(0, referer_listesi.Count - 1)];
+                Rastgele_user_agents = user_Agent_listesi[new Random().Next(0, user_Agent_listesi.Count - 1)];
+
+                if (kullanilanlar.Contains(Rastgele_url))
+                {
+                    Rastgele_url = URL_Listesi[new Random().Next(0, URL_Listesi.Count - 1)];
+                    kullanilanlar.Add(Rastgele_url);
+                }
+                else { kullanilanlar.Add(Rastgele_url); }
+
+                if (kullanilanlar.Contains(Rastgele_referer))
+                {
+                    Rastgele_referer = referer_listesi[new Random().Next(0, referer_listesi.Count - 1)];
+                    kullanilanlar.Add(Rastgele_url);
+                }
+                else { kullanilanlar.Add(Rastgele_referer); }
+
+                if (kullanilanlar.Contains(Rastgele_user_agents))
+                {
+                    Rastgele_user_agents = user_Agent_listesi[new Random().Next(0, user_Agent_listesi.Count - 1)];
+                    kullanilanlar.Add(Rastgele_url);
+                }
+                else { kullanilanlar.Add(Rastgele_user_agents); }
+
                 timer2.Enabled = true;
-                timer1.Enabled = false;
+                timer2.Start();
+                timer3.Enabled = true;
+                timer3.Start();
             }
             else {
-            ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add(url + " için tıklama işlemleri bitti. "+"Toplam Tık: " + tik_sayisi.ToString());
-              timer1.Enabled = false; }
+
+                ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add(id + " Numaralı tarayıcının proxy listesi bitti.");
+                Close();
+
+                 }
+        }
+        
+        public delegate void Main_Process();
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            //if (!geckoWebBrowser1.Url.ToString().Contains("http://lnk.news")) { geckoWebBrowser1.Navigate(Rastgele_url); }
+           
+            geri_sayim2 = geri_sayim2 - 1;
+            label1.Text = geri_sayim2.ToString();
+            Text = geckoWebBrowser1.Url.ToString();
+            if(geri_sayim2 == 0)
+            {
+                Invoke(new Main_Process(Ana_Islem));
+            }
         }
 
         private void geckoWebBrowser1_CreateWindow(object sender, GeckoCreateWindowEventArgs e)
         {
-            if(ppup == true)
+            if (ppup == true)
             {
                 e.Cancel = true;
             }
-           
-        }
-        private void geckoWebBrowser1_NavigationError(object sender, Gecko.Events.GeckoNavigationErrorEventArgs e)
-        {
-            
-            if (string.IsNullOrEmpty(geckoWebBrowser1.Document.Head.InnerHtml) || geckoWebBrowser1.Document.Head.InnerHtml.ToLower().Contains("page load error") || 
-               e.ErrorCode == GeckoError.NS_ERROR_PROXY_CONNECTION_REFUSED || e.ErrorCode == GeckoError.NS_ERROR_UNKNOWN_PROXY_HOST
-               || e.ErrorCode == GeckoError.NS_ERROR_CONNECTION_REFUSED)
-
-            {
-                ((Form1)(Application.OpenForms["Form1"])).listBox3.Items.Add("URL'ye Erişilemedi: " + prxy_lstesi[basla - 1]);
-                timer1.Enabled = true;
-            }
-           
         }
     }
 }
