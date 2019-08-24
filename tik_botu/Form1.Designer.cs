@@ -1,4 +1,4 @@
-﻿namespace tik_botu
+namespace tik_botu
 {
     partial class Form1
     {
@@ -52,10 +52,13 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -76,30 +79,34 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip5 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.contextMenuStrip4.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.contextMenuStrip5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 188);
+            this.button1.Location = new System.Drawing.Point(9, 188);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -123,10 +130,10 @@
             this.listBox1.ContextMenuStrip = this.contextMenuStrip2;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
-            "http://link.tl/2iN0Y"});
+            "http://link.tl/2iNDn"});
             this.listBox1.Location = new System.Drawing.Point(17, 19);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(298, 238);
+            this.listBox1.Size = new System.Drawing.Size(150, 238);
             this.listBox1.TabIndex = 2;
             // 
             // contextMenuStrip2
@@ -149,43 +156,43 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Items.AddRange(new object[] {
             "192.99.203.93:35289",
+            "149.56.1.48:8181",
+            "198.50.177.44:44699",
+            "207.164.119.213:4145",
+            "204.101.4.42:4145",
+            "45.55.207.153:33333",
+            "167.71.176.9:1080",
+            "74.56.229.191:4145",
+            "67.71.223.62:4145",
             "148.153.11.58:39593",
-            "108.29.77.74:54321",
-            "72.89.243.220:64312",
-            "64.20.171.19:64312",
-            "50.237.206.138:64312",
-            "50.237.206.174:64312",
-            "104.237.227.198:54321",
-            "72.87.113.190:39593",
-            "173.56.223.6:54321",
-            "50.253.49.189:54321",
-            "148.77.34.195:54321",
-            "206.71.228.129:8841",
-            "148.77.34.196:54321",
-            "206.71.228.193:8841",
             "148.77.34.200:54321",
-            "66.193.213.37:64312",
+            "69.70.47.18:48854",
+            "64.20.171.19:64312",
+            "74.59.132.126:53496",
+            "50.224.238.78:64312",
+            "38.104.12.102:31596",
+            "104.237.227.198:54321",
+            "104.237.252.115:1080",
+            "104.237.252.116:1080",
+            "173.56.223.6:54321",
+            "108.29.77.74:54321",
+            "50.253.49.189:54321",
             "70.88.209.53:64312",
-            "67.154.191.166:34450",
-            "173.225.184.54:50189",
-            "207.190.85.245:38694",
-            "66.193.213.93:64312",
-            "207.190.85.244:38694",
-            "98.26.138.243:1080",
-            "208.77.130.238:64312",
-            "75.102.138.62:33150",
-            "50.195.7.180:64312",
-            "66.194.211.217:64312",
-            "71.39.105.130:64312",
-            "50.247.207.5:31469",
-            "75.176.231.109:39593",
-            "74.51.11.185:33108",
-            "50.204.122.174:54321",
-            "75.190.101.224:33150",
-            "64.129.148.139:80"});
+            "71.187.73.174:64312",
+            "72.38.188.134:39908",
+            "207.189.214.154:4145",
+            "206.71.228.193:8841",
+            "66.194.210.175:64312",
+            "66.244.86.186:64312",
+            "206.71.228.129:8841",
+            "67.154.191.165:34450",
+            "66.193.213.37:64312",
+            "50.250.56.129:48380",
+            "68.198.199.183:64312",
+            "50.236.148.246:31699"});
             this.listBox2.Location = new System.Drawing.Point(13, 19);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(298, 225);
+            this.listBox2.Size = new System.Drawing.Size(224, 225);
             this.listBox2.TabIndex = 3;
             // 
             // contextMenuStrip3
@@ -213,16 +220,16 @@
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.listBox2);
-            this.groupBox1.Location = new System.Drawing.Point(557, 12);
+            this.groupBox1.Location = new System.Drawing.Point(404, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 372);
+            this.groupBox1.Size = new System.Drawing.Size(255, 381);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proxy Listesi";
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(199, 316);
+            this.button15.Location = new System.Drawing.Point(126, 313);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(111, 23);
             this.button15.TabIndex = 8;
@@ -245,13 +252,12 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(12, 342);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(298, 20);
+            this.textBox4.Size = new System.Drawing.Size(226, 20);
             this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "80.169.143.166:4145";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(199, 284);
+            this.button7.Location = new System.Drawing.Point(126, 281);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(112, 28);
             this.button7.TabIndex = 8;
@@ -300,7 +306,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(199, 250);
+            this.button3.Location = new System.Drawing.Point(126, 247);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 28);
             this.button3.TabIndex = 4;
@@ -317,28 +323,28 @@
             this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Location = new System.Drawing.Point(12, 9);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(331, 375);
+            this.groupBox2.Size = new System.Drawing.Size(184, 384);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Link Listesi";
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(228, 290);
+            this.button8.Location = new System.Drawing.Point(17, 321);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(87, 23);
+            this.button8.Size = new System.Drawing.Size(150, 23);
             this.button8.TabIndex = 6;
-            this.button8.Text = "Listeyi Temizle";
+            this.button8.Text = "Temizle";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(97, 290);
+            this.button6.Location = new System.Drawing.Point(16, 350);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 23);
+            this.button6.Size = new System.Drawing.Size(151, 23);
             this.button6.TabIndex = 5;
-            this.button6.Text = "Toplu Link Ekle (.txt)";
+            this.button6.Text = "Toplu Link (*.txt)";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -346,7 +352,7 @@
             // 
             this.button5.Location = new System.Drawing.Point(16, 290);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(151, 23);
             this.button5.TabIndex = 4;
             this.button5.Text = "Ekle";
             this.button5.UseVisualStyleBackColor = true;
@@ -356,60 +362,118 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(17, 264);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 20);
+            this.textBox1.Size = new System.Drawing.Size(150, 20);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Linkinizi buraya yazın";
             // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.HorizontalScrollbar = true;
-            this.listBox3.Location = new System.Drawing.Point(16, 26);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(839, 147);
-            this.listBox3.TabIndex = 6;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.listBox3);
-            this.groupBox3.Location = new System.Drawing.Point(12, 484);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(872, 186);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Günlükler";
-            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.pictureBox1);
+            this.groupBox4.Controls.Add(this.groupBox8);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.numericUpDown2);
+            this.groupBox4.Controls.Add(this.numericUpDown1);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Location = new System.Drawing.Point(349, 12);
+            this.groupBox4.Location = new System.Drawing.Point(202, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(202, 372);
+            this.groupBox4.Size = new System.Drawing.Size(196, 381);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kontrol Paneli";
             // 
-            // pictureBox1
+            // groupBox8
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 163);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.groupBox8.Controls.Add(this.textBox5);
+            this.groupBox8.Location = new System.Drawing.Point(9, 16);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(174, 166);
+            this.groupBox8.TabIndex = 9;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Duyuru";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox5.Location = new System.Drawing.Point(3, 16);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(168, 147);
+            this.textBox5.TabIndex = 0;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 345);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Zaman Aşımı:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Açılacak tarayıcı sayısı:";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(128, 343);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDown2.TabIndex = 6;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(128, 319);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.checkBox2);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.checkBox1);
-            this.groupBox5.Location = new System.Drawing.Point(18, 217);
+            this.groupBox5.Location = new System.Drawing.Point(9, 217);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(165, 96);
+            this.groupBox5.Size = new System.Drawing.Size(174, 96);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Ayarlar";
@@ -500,18 +564,18 @@
             this.groupBox6.Controls.Add(this.button11);
             this.groupBox6.Controls.Add(this.textBox2);
             this.groupBox6.Controls.Add(this.listBox4);
-            this.groupBox6.Location = new System.Drawing.Point(890, 12);
+            this.groupBox6.Location = new System.Drawing.Point(665, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(331, 326);
+            this.groupBox6.Size = new System.Drawing.Size(331, 381);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Referer Listesi";
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(228, 290);
+            this.button9.Location = new System.Drawing.Point(17, 324);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(87, 23);
+            this.button9.Size = new System.Drawing.Size(112, 28);
             this.button9.TabIndex = 6;
             this.button9.Text = "Listeyi Temizle";
             this.button9.UseVisualStyleBackColor = true;
@@ -519,9 +583,9 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(97, 290);
+            this.button10.Location = new System.Drawing.Point(203, 290);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(125, 23);
+            this.button10.Size = new System.Drawing.Size(112, 28);
             this.button10.TabIndex = 5;
             this.button10.Text = "Toplu Link Ekle (.txt)";
             this.button10.UseVisualStyleBackColor = true;
@@ -529,9 +593,9 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(16, 290);
+            this.button11.Location = new System.Drawing.Point(17, 290);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.Size = new System.Drawing.Size(112, 28);
             this.button11.TabIndex = 4;
             this.button11.Text = "Ekle";
             this.button11.UseVisualStyleBackColor = true;
@@ -1268,54 +1332,36 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.button12);
-            this.groupBox7.Controls.Add(this.button13);
             this.groupBox7.Controls.Add(this.button14);
-            this.groupBox7.Controls.Add(this.textBox3);
             this.groupBox7.Controls.Add(this.listBox5);
-            this.groupBox7.Location = new System.Drawing.Point(890, 344);
+            this.groupBox7.Controls.Add(this.textBox3);
+            this.groupBox7.Controls.Add(this.button13);
+            this.groupBox7.Location = new System.Drawing.Point(12, 399);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(331, 326);
+            this.groupBox7.Size = new System.Drawing.Size(512, 213);
             this.groupBox7.TabIndex = 11;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "User Agent Listesi";
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(228, 290);
+            this.button12.Location = new System.Drawing.Point(379, 83);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(87, 23);
+            this.button12.Size = new System.Drawing.Size(125, 58);
             this.button12.TabIndex = 6;
             this.button12.Text = "Listeyi Temizle";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(97, 290);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(125, 23);
-            this.button13.TabIndex = 5;
-            this.button13.Text = "Toplu Ekle (.txt)";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(16, 290);
+            this.button14.Location = new System.Drawing.Point(379, 147);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.Size = new System.Drawing.Size(125, 58);
             this.button14.TabIndex = 4;
             this.button14.Text = "Ekle";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(17, 264);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(298, 20);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "User Agent\'inizi buraya yazın";
             // 
             // listBox5
             // 
@@ -1876,9 +1922,9 @@
                 "9pre",
             "Mozilla/5.0 (Windows NT 6.1; rv:2.0b6pre) Gecko/20100903 Firefox/4.0b6pre Firefox" +
                 "/4.0b6pre"});
-            this.listBox5.Location = new System.Drawing.Point(17, 19);
+            this.listBox5.Location = new System.Drawing.Point(10, 19);
             this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(298, 238);
+            this.listBox5.Size = new System.Drawing.Size(363, 160);
             this.listBox5.TabIndex = 2;
             // 
             // contextMenuStrip5
@@ -1895,15 +1941,51 @@
             this.toolStripMenuItem3.Text = "Kaldır";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(10, 185);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(363, 20);
+            this.textBox3.TabIndex = 3;
+            this.textBox3.Text = "User Agent\'inizi buraya yazın";
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(379, 19);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(125, 58);
+            this.button13.TabIndex = 5;
+            this.button13.Text = "Toplu Ekle (.txt)";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.listBox3);
+            this.groupBox3.Location = new System.Drawing.Point(530, 405);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(466, 207);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Günlükler";
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(9, 19);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(441, 173);
+            this.listBox3.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 675);
+            this.ClientSize = new System.Drawing.Size(1007, 620);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1911,17 +1993,21 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Link Tıklatma Otomasyonu V1.0.0 - Build 16.07.19 - By 20071999 - www.turkhackteam" +
-    ".org";
+            this.Text = "Link Tıklatma Otomasyonu V3.0.0 - Build 24.08.19 - By 20071999 - asuslaptop230@gm" +
+    "ail.com";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.contextMenuStrip2.ResumeLayout(false);
             this.contextMenuStrip3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox4.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -1931,6 +2017,7 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.contextMenuStrip5.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1947,14 +2034,11 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox checkBox1;
-        public System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
@@ -1989,6 +2073,13 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
-
